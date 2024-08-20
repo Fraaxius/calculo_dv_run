@@ -1,5 +1,7 @@
 # Programa hecho por Francisco Sánchez M.
 
+# [WIP]
+
 # Declaración de variables
 run = 0
 runinvertido = 0
