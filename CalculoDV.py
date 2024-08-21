@@ -34,14 +34,13 @@ print(f"\n{Color.HEADER}¡Hola! Bienvenido al programa de Cálculo de Dígito Ve
 
 # Solicitar ingreso de RUN
 run = input(f"{Color.OKBLUE}Ingresa el RUN que deseas calcular (7 u 8 dígitos, sin puntos/guión ni dígito verificador, por ejemplo: 21123456): {Color.ENDC}")
-print('')
 
 # Verificación de input
 if not run.isdigit() or len(run) < 7 or len(run) > 8:
     print(f"\n{Color.FAIL}Error: La entrada no es válida. Verifica si escribiste el RUN con el formato indicado.{Color.ENDC}")
 else:
     runinvertido = run[::-1]
-    print(f'{Color.OKGREEN}Calculando...\n{Color.ENDC}')
+    print(f'\n{Color.OKGREEN}Calculando...\n{Color.ENDC}')
     time.sleep(3)
 
     # Secuencia de multiplicación
