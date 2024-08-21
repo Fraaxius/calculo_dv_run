@@ -3,6 +3,16 @@ import time
 
 # Programa creado por Francisco Sánchez M.
 
+# Determinar despedida según hora
+hora_actual = datetime.now().hour
+
+if 7 <= hora_actual < 12:
+    despedida = "Buenos días. :)"
+elif 12 <= hora_actual < 18:
+    despedida = "Buenas tardes. :)"
+else:
+    despedida = "Buenas noches. :)"
+
 # Variables
 run = 0
 runinvertido = 0
@@ -39,4 +49,4 @@ else:
         dv = 'K'
     
     print(f"El digito verificador del RUN es: {dv}")
-    print(f"Gracias por utilizar el programa!")
+    print(f"Gracias por utilizar el programa! {despedida}")
