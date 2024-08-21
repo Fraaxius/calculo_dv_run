@@ -1,7 +1,7 @@
+# Programa creado por Francisco Sánchez M.
+
 from datetime import datetime
 import time
-
-# Programa creado por Francisco Sánchez M.
 
 # Determinar despedida según hora
 hora_actual = datetime.now().hour
