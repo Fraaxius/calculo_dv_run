@@ -3,33 +3,45 @@
 from datetime import datetime
 import time
 
+# Colores para la consola (si se soporta)
+class Color:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 # Determinar despedida según hora
 hora_actual = datetime.now().hour
 
 if 6 <= hora_actual < 12:
-    despedida = "Buenos días. :)"
+    despedida = f"{Color.OKGREEN}Buenos días. {Color.ENDC}:)"
 elif 12 <= hora_actual < 18:
-    despedida = "Buenas tardes. :)"
+    despedida = f"{Color.OKCYAN}Buenas tardes. {Color.ENDC}:)"
 else:
-    despedida = "Buenas noches. :)"
+    despedida = f"{Color.OKBLUE}Buenas noches. {Color.ENDC}:)"
 
 # Variables
-run = 0
-runinvertido = 0
+run = ''
+runinvertido = ''
 dv = ''
 
-print ('Hola! Bienvenido al programa de Cálculo de Dígito Verificador.\n')
+print(f"\n{Color.HEADER}¡Hola! Bienvenido al programa de Cálculo de Dígito Verificador.{Color.ENDC}\n")
 
-# Solicitud de ingreso de RUN sin DV
-run=input("Ingresa el RUN que deseas calcular, (7 u 8 dígitos, sin puntos/guión y dìgito verificador, ejemplo: 21123456): ")
+# Solicitar ingreso de RUN
+run = input(f"{Color.OKBLUE}Ingresa el RUN que deseas calcular (7 u 8 dígitos, sin puntos/guión ni dígito verificador, por ejemplo: 21123456): {Color.ENDC}")
 print('')
 
 # Verificación de input
 if not run.isdigit() or len(run) < 7 or len(run) > 8:
-    print("\nError: La entrada no es válida. Verifica si escribiste el RUN con el formato antes mencionado.")
+    print(f"\n{Color.FAIL}Error: La entrada no es válida. Verifica si escribiste el RUN con el formato indicado.{Color.ENDC}")
 else:
     runinvertido = run[::-1]
-    print ('Calculando...\n')
+    print(f'{Color.OKGREEN}Calculando...\n{Color.ENDC}')
     time.sleep(3)
 
     # Secuencia de multiplicación
@@ -42,7 +54,7 @@ else:
         peso = multiplicacion[i % len(multiplicacion)]
         suma += digito * peso
     
-    # Calculo de dígito verificador (finalmente)
+    # Cálculo del dígito verificador
     residuo = suma % 11
     dv = 11 - residuo
 
@@ -64,7 +76,7 @@ else:
     run_formateado = formatear_run(run)
     run_completo = f"{run_formateado}-{dv}"
 
-    # Visualización de resultados
-    print(f"El digito verificador del RUN es: {dv}")
-    print(f'\nPor lo tanto, el rut completo es: {run_completo}')
-    print(f"\nGracias por utilizar el programa! {despedida}")
+    # Mostrar resultados
+    print(f"{Color.OKGREEN}El dígito verificador del RUN es: {Color.BOLD}{dv}{Color.ENDC}")
+    print(f'\n{Color.OKCYAN}Por lo tanto, el RUT completo es: {Color.BOLD}{run_completo}{Color.ENDC}')
+    print(f"\n{Color.HEADER}¡Gracias por utilizar el programa! {despedida}{Color.ENDC}")
