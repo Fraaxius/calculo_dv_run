@@ -6,7 +6,7 @@ import time
 # Determinar despedida según hora
 hora_actual = datetime.now().hour
 
-if 7 <= hora_actual < 12:
+if 6 <= hora_actual < 12:
     despedida = "Buenos días. :)"
 elif 12 <= hora_actual < 18:
     despedida = "Buenas tardes. :)"
