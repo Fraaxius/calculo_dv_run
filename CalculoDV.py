@@ -20,6 +20,7 @@ dv = ''
 
 print ('Hola! Bienvenido al programa de Cálculo de Dígito Verificador.\n')
 run=input("Ingresa el RUN que deseas calcular (sin dìgito verificador, ejemplo: 21123456): ")
+print('')
 
 # Verificación de input
 if not run.isdigit():
@@ -49,4 +50,4 @@ else:
         dv = 'K'
     
     print(f"El digito verificador del RUN es: {dv}")
-    print(f"Gracias por utilizar el programa! {despedida}")
+    print(f"\nGracias por utilizar el programa! {despedida}")
