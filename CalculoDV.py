@@ -19,11 +19,11 @@ runinvertido = 0
 dv = ''
 
 print ('Hola! Bienvenido al programa de Cálculo de Dígito Verificador.\n')
-run=input("Ingresa el RUN que deseas calcular (sin dìgito verificador, ejemplo: 21123456): ")
+run=input("Ingresa el RUN que deseas calcular, sea de 7 o 8 dígitos (sin puntos/guión y dìgito verificador, ejemplo: 21123456): ")
 print('')
 
 # Verificación de input
-if not run.isdigit():
+if not run.isdigit() or len(run) < 7 or len(run) > 8:
     print("\nError: La entrada no es válida. Verifica si escribiste el RUN con el formato antes mencionado.")
 else:
     runinvertido = run[::-1]
