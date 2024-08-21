@@ -49,5 +49,19 @@ else:
     elif dv == 10:
         dv = 'K'
     
+    # Función para dar formato al RUN con puntos
+    def formatear_run(run):
+        if len(run) == 7:
+            return f"{run[0]}.{run[1:4]}.{run[4:]}"
+        elif len(run) == 8:
+            return f"{run[:2]}.{run[2:5]}.{run[5:]}"
+        else:
+            return run
+
+    # Formatear RUN con puntos
+    run_formateado = formatear_run(run)
+
+    run_completo = f"{run_formateado}-{dv}"
     print(f"El digito verificador del RUN es: {dv}")
+    print(f'\nPor lo tanto, el rut completo es: {run_completo}')
     print(f"\nGracias por utilizar el programa! {despedida}")
