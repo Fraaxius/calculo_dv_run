@@ -19,7 +19,9 @@ runinvertido = 0
 dv = ''
 
 print ('Hola! Bienvenido al programa de Cálculo de Dígito Verificador.\n')
-run=input("Ingresa el RUN que deseas calcular, sea de 7 o 8 dígitos (sin puntos/guión y dìgito verificador, ejemplo: 21123456): ")
+
+# Solicitud de ingreso de RUN sin DV
+run=input("Ingresa el RUN que deseas calcular, (7 u 8 dígitos, sin puntos/guión y dìgito verificador, ejemplo: 21123456): ")
 print('')
 
 # Verificación de input
@@ -60,8 +62,9 @@ else:
 
     # Formatear RUN con puntos
     run_formateado = formatear_run(run)
-
     run_completo = f"{run_formateado}-{dv}"
+
+    # Visualización de resultados
     print(f"El digito verificador del RUN es: {dv}")
     print(f'\nPor lo tanto, el rut completo es: {run_completo}')
     print(f"\nGracias por utilizar el programa! {despedida}")
